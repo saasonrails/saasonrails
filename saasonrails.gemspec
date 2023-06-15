@@ -29,4 +29,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "omniauth", "~> 2.1.1"
   spec.add_dependency "omniauth-rails_csrf_protection", "~> 1.0.1"
+
+  spec.add_dependency "view_component", "~> 3.1"
+  spec.add_dependency "view_component-contrib", "~> 0.1.4"
 end
