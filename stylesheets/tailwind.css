@@ -2,21 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /**
  * application.html.erb
 **/
 @layer components {
   .h-navbar { @apply h-[4.5em] }
-  .font-headings { font-family: 'Braah One' }
+  .font-headings { 
+    font-family: 'Jost';
+  }
 
   body {
     font-family: 'Poppins';
     overscroll-behavior: none;
-  }
-
-  body.application {
-    @apply min-h-screen flex w-full antialiased text-neutral-600 bg-neutral-50
   }
 
   .wrapper {
@@ -36,7 +33,7 @@
   }
 
   #sidebar .logo-container .logo-text {
-    @apply font-headings p-4 -ml-4 rounded-full text-xl font-bold text-primary-700 hover:text-primary-800 transition
+    @apply font-headings p-4 -ml-4 text-xl font-bold text-primary-700 hover:text-primary-800 transition
   }
 
   #sidebar #navigations {
@@ -44,7 +41,7 @@
   }
 
   #sidebar #navigations nav > h5 {
-    @apply text-xs text-primary-700 font-headings mb-5
+    @apply text-xs text-primary-700 font-headings font-bold uppercase mb-5
   }
 
   #sidebar #navigations nav > ul {
