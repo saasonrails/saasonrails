@@ -6,6 +6,8 @@ require "simple_form"
 require "omniauth"
 require "omniauth/rails_csrf_protection"
 
+require "dry-initializer"
+
 require "view_component"
 require "view_component-contrib"
 
