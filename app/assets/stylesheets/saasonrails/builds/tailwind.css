@@ -495,8 +495,7 @@ video {
 }
 
 .box table tr:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  background-color: var(--color-neutral-50);
 }
 
 .box table tbody td a {
@@ -522,8 +521,7 @@ video {
        column-gap: 0.25rem;
   white-space: nowrap;
   border-radius: 0.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  background-color: var(--color-neutral-50);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
@@ -903,6 +901,21 @@ body {
   overscroll-behavior: none;
 }
 
+body.application {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-600);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 2rem;
+}
+
 h1, h2, h3 {
   font-family: 'Braah One';
   color: var(--color-neutral-600)
@@ -1111,8 +1124,7 @@ h1, h2, h3 {
        column-gap: 0.25rem;
   white-space: nowrap;
   border-radius: 0.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  background-color: var(--color-neutral-50);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
@@ -1395,12 +1407,16 @@ h1, h2, h3 {
 }
 
 .bg-neutral-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  background-color: var(--color-neutral-50);
 }
 
 .bg-primary-700 {
   background-color: var(--color-primary-700);
+}
+
+.bg-rose-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
 }
 
 .bg-white {
