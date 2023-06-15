@@ -1,0 +1,16 @@
+{
+  "name": "saasonrails",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:saasonrails/saasonrails.git",
+  "author": "kjellberg <2277443+kjellberg@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "scripts": {
+    "build": "npx tailwindcss -c ./config/tailwind.config.js -i ./stylesheets/tailwind.css -o ./app/assets/stylesheets/saasonrails/builds/tailwind.css",
+    "dev": "yarn run build --watch"
+  }
+}

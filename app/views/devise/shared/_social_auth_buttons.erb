@@ -1,0 +1,15 @@
+<section id="social-auth-buttons">
+  <div class="flex justify-between gap-x-4">
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "button md lg:lg bg-primary-700 bg-#{provider.downcase} text-white" do %>
+        <i class="fab fa-<%= provider.downcase %> mr-2 -ml-1"></i>
+        Continue with <%= OmniAuth::Utils.camelize(provider) %>
+      <% end %>
+    <% end %>
+  </div>
+</section>
+
+<div class="flex items-center relative h-8">
+  <div class="bg-neutral-50 text-neutral-400 px-8 z-10 text-xs mx-auto font-headings">or</div>
+  <div class="absolute text-center border-b h-[1px] w-full"></div>
+</div>

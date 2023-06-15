@@ -1,0 +1,28 @@
+<section class="topbar-dropdown text-sm" data-controller="dropdown">
+  <!-- Dropdown selected item -->
+  <button data-action="dropdown#toggle click@window->dropdown#hide">
+    <img src="https://picsum.photos/50">
+    <div class="content pr-2">
+      <strong><%= current_account.name %></strong>
+      
+      <% if current_account.personal_account? %>
+        <span class="flex items-center gap-x-1">
+          <i class="fas fa-user"></i>
+          Personal account
+        </span>
+      <% else %>
+        <span class="flex items-center gap-x-1">
+          <i class="fas fa-users"></i>
+          Team account
+        </span>
+      <% end %>
+    </div>
+    <i class="fa-solid fa-caret-down"></i>
+  </button>
+
+  <!-- Dropdown items -->
+  <div data-dropdown-target="menu" class="hidden transition items" data-transition-enter-from="opacity-0 scale-95" data-transition-enter-to="opacity-100 scale-100" data-transition-leave-from="opacity-100 scale-100" data-transition-leave-to="opacity-0 scale-95">
+    <%= link_to 'Edit profile' , '#', class: 'item' %>
+    <%= button_to 'Sign out' , destroy_user_session_path, class: 'item', method: :delete %>
+  </div>
+</section>

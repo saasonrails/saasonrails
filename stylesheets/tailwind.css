@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/**
+ * application.html.erb
+**/
+@layer components {
+  .h-navbar { @apply h-[4.5em] }
+  .font-headings { font-family: 'Braah One' }
+
+  body {
+    font-family: 'Poppins';
+    overscroll-behavior: none;
+  }
+
+  .wrapper {
+    @apply w-full p-8
+  }
+
+  h1, h2, h3 {
+    @apply font-headings text-neutral-600
+  }
+
+  #sidebar {
+    @apply flex flex-col flex-1 max-w-xs px-8 bg-white relative border-r
+  }
+  
+  #sidebar .logo-container {
+    @apply h-navbar flex items-center justify-between
+  }
+
+  #sidebar .logo-container .logo-text {
+    @apply font-headings p-4 -ml-4 rounded-full text-xl font-bold text-primary-700 hover:text-primary-800 transition
+  }
+
+  #sidebar #navigations {
+    @apply flex flex-col gap-y-10
+  }
+
+  #sidebar #navigations nav > h5 {
+    @apply text-xs text-primary-700 font-headings mb-5
+  }
+
+  #sidebar #navigations nav > ul {
+    @apply flex flex-col gap-y-4
+  }
+
+  #sidebar #navigations nav > ul > li > a,
+  #sidebar #navigations nav > ul > li .as-link {
+    @apply flex gap-x-3 items-center w-full text-sm font-semibold text-neutral-600 hover:text-primary-900
+  }
+
+  #page {
+    @apply flex flex-col flex-1 relative
+  }
+
+  #navbar {
+    @apply flex h-navbar relative w-full bg-white px-8 gap-x-6 z-40 items-center border-b
+  }
+
+  #navbar .topbar-dropdown {
+    @apply relative block;
+  }
+
+  #navbar .topbar-dropdown button {
+    @apply flex items-center text-left gap-x-4 text-neutral-600 cursor-pointer;
+  }
+
+  #navbar .topbar-dropdown button img {
+    @apply w-9 h-9 rounded;
+  }
+
+  #navbar .topbar-dropdown .content {
+    @apply flex flex-col
+  }
+
+  #navbar .topbar-dropdown .content span {
+    @apply text-xs text-slate-400 font-normal;
+  }
+
+  #navbar .topbar-dropdown .items {
+    @apply z-50 bg-white divide-y absolute -left-2 -right-7 mt-3.5 shadow-sm border border-t-0 rounded-b whitespace-nowrap;
+  }
+
+  #navbar .topbar-dropdown .items .item {
+    @apply flex w-full p-4 gap-x-4 items-center text-xs hover:bg-neutral-100 hover:text-neutral-900 transition;
+  }
+
+  #navbar .topbar-dropdown .item:hover span {
+    @apply text-neutral-700
+  }
+}
+
+/**
+ * Buttons
+**/
+@layer components {
+  .buttons-group {
+    @apply flex gap-x-5 justify-between;
+  }
+
+  .button {
+    @apply inline-flex items-center gap-x-1 py-2 px-3 leading-3 justify-center rounded transition shadow hover:shadow-none text-xs bg-neutral-50 font-bold whitespace-nowrap cursor-pointer;
+  }
+
+  .button.primary,
+  .button.ql-active {
+    @apply bg-primary-700 hover:bg-primary-600 text-white
+  }
+
+  .button.danger {
+    @apply bg-red-600 hover:bg-red-700 text-white
+  }
+
+  .button[disabled] {
+    @apply opacity-40 grayscale
+  }
+
+  .button.xs {
+    @apply px-2 py-1 text-xs
+  }
+
+  .button.lg {
+    @apply px-4 py-2 text-sm
+  }
+
+  .button.xl {
+    @apply px-6 py-3 text-base
+  }
+
+  .button.xxl {
+    @apply px-8 py-4 text-lg
+  }
+}
+
+/**
+ * Boxes and cards
+**/
+@layer base {
+  .box {
+    @apply border bg-white
+  }
+
+  .box header {
+    @apply flex p-5 border-b
+  }
+
+  .box header h2 {
+    @apply font-normal text-xs text-primary-700
+  }
+
+  .box table {
+    @apply w-full
+  }
+
+  .box table thead {
+    @apply bg-neutral-100
+  }
+
+  .box table th,
+  .box table td {
+    @apply text-left text-sm px-5 py-2 border-r
+  }
+
+  .box table thead th {
+    @apply text-xs bg-white py-4 uppercase text-primary-700;
+  }
+
+  .box table tbody td {
+    @apply text-sm;
+  }
+
+  .box table thead th.mini,
+  .box table tbody td.mini {
+    @apply w-0 text-center whitespace-nowrap
+  }
+
+  .box table tbody .actions {
+    @apply flex gap-x-4
+  }
+
+  .box table tr {
+    @apply border-b;
+  }
+
+  .box table tr:hover {
+    @apply bg-neutral-50;
+  }
+
+  .box table tbody td a {
+    @apply text-primary-700 hover:text-primary-800
+  }
+}
+
+/**
+ * Forms
+**/
+@layer base {
+  .simple_form {
+    @apply block w-full
+  }
+
+  .form-inputs {
+    @apply flex flex-col gap-5
+  }
+
+  .form-actions .form-button {
+    @apply button primary lg
+  }
+
+  .input {
+    @apply flex flex-col relative p-5 border-b
+  }
+
+  .input abbr {
+    @apply hidden
+  }
+
+  .input label {
+    @apply text-primary-700 font-headings text-xs mb-2 uppercase whitespace-nowrap
+  }
+
+  .input .hint {
+    @apply text-neutral-500 mt-2 text-xs
+  }
+
+  .input.required label {
+    @apply font-bold
+  }
+
+  .input input:not([type="checkbox"]),
+  .input textarea,
+  .input select {
+    @apply p-0 w-full border-0 focus:ring-0 text-sm bg-white text-neutral-500 hover:text-primary-800 focus:text-primary-800 placeholder-neutral-400
+  }
+
+  /* .input input[type="checkbox"] {
+    @apply 
+  } */
+
+  .input input.disabled {
+    @apply text-primary-700 border-0 p-0
+  }
+
+  .input.boolean {
+    @apply flex flex-row gap-x-4 border-0 p-0
+  }
+
+  .input.boolean label {
+    @apply m-0 p-0 flex-1 h-full
+  }
+
+  .input .error {
+    @apply text-xs text-red-500 mt-2 absolute top-2 right-5 font-bold
+  }
+
+  .repeatable {
+    @apply flex flex-col w-full py-4 px-5 border-b border-neutral-200 relative
+  }
+
+  .input.editor .editor-toolbar {
+    @apply mt-2.5 mb-5 -mx-5 px-5 flex gap-2 flex-shrink rounded
+  }
+
+  .input.editor .editor-body .ql-editor {
+    @apply w-full focus:outline-0 text-sm min-h-[40px]
+  }
+
+  .input.editor .editor-body .ql-clipboard {
+    @apply hidden
+  }
+
+  .input.editor textarea.code-editor {
+    @apply w-full font-mono min-h-[40px]
+  }
+
+  .input .field_with_errors {
+    @apply flex flex-col relative
+  }
+
+  .input .field_with_errors input {
+    @apply text-rose-500
+  }
+}

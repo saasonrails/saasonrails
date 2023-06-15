@@ -1,28 +1,35 @@
 # Saasonrails
+
 Short description and motivation.
 
 ## Usage
+
 How to use my plugin.
 
 ## Installation
+
 Add this line to your application's Gemfile:
 
 ```ruby
 gem "saasonrails"
 ```
 
-And then execute:
-```bash
-$ bundle
+##### Delete the `views/layouts/` directory
+
+```console
+rm -rf views/layouts
 ```
 
-Or install it yourself as:
-```bash
-$ gem install saasonrails
+##### Add `saasonrails` to the asset pipeline
+
+```scss
+// file: app/assets/stylesheets/application.css
+*= require saasonrails
 ```
 
-## Contributing
-Contribution directions go here.
+##### Add `Saasonrails::Controllers::Application` to your `ApplicationController`
 
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+```ruby
+# file: app/controllers/application_controller
+include Saasonrails::Controllers::Application
+```

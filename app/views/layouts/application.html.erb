@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <%= render "shared/head" %>
+  <body class="min-h-screen flex w-full antialiased text-neutral-600 bg-neutral-50">
+    <aside id="sidebar">
+      <%= render "shared/sidebar" %>
+    </aside>
+    <section id="page">
+      <%= render "shared/navbar" %>
+      <main>
+        <%= yield %>
+      </main>
+    </section>
+  </body>
+</html>
