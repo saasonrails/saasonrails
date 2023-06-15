@@ -2,15 +2,14 @@
 
 require "test_helper"
 
-class Layout::PageHeader::ComponentTest < ActiveSupport::TestCase
-  include ViewComponent::TestHelpers
-
-  def test_renders
-    component = build_component
+class Layout::PageHeader::ComponentTest < ViewComponent::TestCase
+  def test_render
+    component = build_component(title: "Test Title", subtitle: "Test Subtitle")
 
     render_inline(component)
 
-    assert_selector("div.page-header")
+    assert_selector("header > h1", text: "Test Title")
+    assert_selector("header > p", text: "Test Subtitle")
   end
 
   private
