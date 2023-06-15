@@ -1,0 +1,19 @@
+<%= simple_form_for(personal_account, url: onboarding_personal_account_path) do |f| %>
+  
+  <div class="form-inputs">
+    <%= f.input :name,
+                required: true,
+                autofocus: true,
+                placeholder: "Enter your full name",
+                wrapper_html: { class: "box" } %>
+  </div>
+
+  <div class="form-actions mt-8 flex items-center justify-between gap-4">
+    <div class="buttons-group items-center">
+      <%= f.button :submit, "Complete your account", class: "button primary xl" %>
+    </div>
+    <div>
+      <p class="text-sm">Changed your mind? <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "font-bold hover:text-primary-700 transition" %></p>
+    </div>
+  </div>
+<% end %>

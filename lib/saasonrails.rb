@@ -18,15 +18,18 @@ module Saasonrails
     module Onboarding
       autoload :PersonalAccounts, "saasonrails/controllers/onboarding/personal_accounts"
     end
+  end
 
-    module Teamable
-      autoload :CurrentAccountHelper, "saasonrails/controllers/teamable/current_account_helper"
-      autoload :Current, "saasonrails/controllers/teamable/current"
-      autoload :MissingAccountError, "saasonrails/controllers/teamable/missing_account_error"
-    end
+  module Teamable
+    autoload :CurrentAccountHelper, "saasonrails/teamable/current_account_helper"
+    autoload :Current, "saasonrails/teamable/current"
+    autoload :MissingAccountError, "saasonrails/teamable/missing_account_error"
+  end
 
-    module Models
-      autoload :User, "saasonrails/models/user"
-    end
+  module Models
+    autoload :Account, "saasonrails/models/account"
+    autoload :AccountUser, "saasonrails/models/account_user"
+    autoload :User, "saasonrails/models/user"
+    autoload :OauthExternalLogin, "saasonrails/models/oauth_external_login"
   end
 end

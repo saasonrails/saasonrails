@@ -33,3 +33,9 @@ rm -rf views/layouts
 # file: app/controllers/application_controller
 include Saasonrails::Controllers::Application
 ```
+
+##### Copy migrations
+
+```console
+./bin/rails saasonrails_engine:install:migrations
+```
