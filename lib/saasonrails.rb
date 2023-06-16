@@ -4,6 +4,7 @@ require "devise"
 require "simple_form"
 require "dry-initializer"
 require "importmap-rails"
+require "public_uid"
 
 require "omniauth"
 require "omniauth/rails_csrf_protection"

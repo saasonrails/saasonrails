@@ -4,6 +4,7 @@ module Saasonrails
   module Models
     module User
       extend ActiveSupport::Concern
+      include PublicUid::ModelConcern
 
       included do
         devise :database_authenticatable, :registerable, :omniauthable,

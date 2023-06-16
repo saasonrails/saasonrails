@@ -35,4 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "view_component-contrib", "~> 0.1.4"
 
   spec.add_dependency "dry-initializer", "~> 3.1"
+  spec.add_dependency "public_uid", "~> 2.2.0"
 end
