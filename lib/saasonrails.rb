@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "acts_as_tenant"
 require "devise"
 require "simple_form"
 require "dry-initializer"
@@ -27,8 +28,6 @@ module Saasonrails
   end
 
   module Teamable
-    autoload :CurrentAccountHelper, "saasonrails/teamable/current_account_helper"
-    autoload :Current, "saasonrails/teamable/current"
     autoload :MissingAccountError, "saasonrails/teamable/missing_account_error"
   end
 
