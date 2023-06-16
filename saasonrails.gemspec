@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "devise", "~> 4.9"
   spec.add_dependency "simple_form", "~> 5.2"
   spec.add_dependency "importmap-rails", "~> 1.1.6"
+  spec.add_dependency "friendly_id", "~> 5.5.0"
 
   spec.add_dependency "omniauth", "~> 2.1.1"
   spec.add_dependency "omniauth-rails_csrf_protection", "~> 1.0.1"

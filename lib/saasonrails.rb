@@ -6,6 +6,7 @@ require "simple_form"
 require "dry-initializer"
 require "importmap-rails"
 require "public_uid"
+require "friendly_id"
 
 require "omniauth"
 require "omniauth/rails_csrf_protection"
