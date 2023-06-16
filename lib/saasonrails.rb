@@ -2,11 +2,11 @@
 
 require "devise"
 require "simple_form"
+require "dry-initializer"
+require "importmap-rails"
 
 require "omniauth"
 require "omniauth/rails_csrf_protection"
-
-require "dry-initializer"
 
 require "view_component"
 require "view_component-contrib"
