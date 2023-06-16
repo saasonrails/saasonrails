@@ -1246,6 +1246,10 @@ h1, h2, h3 {
   margin-top: 2rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -1373,20 +1377,12 @@ h1, h2, h3 {
        column-gap: 1.5rem;
 }
 
-.gap-y-2 {
-  row-gap: 0.5rem;
-}
-
-.gap-y-0 {
-  row-gap: 0px;
-}
-
-.gap-y-0\.5 {
-  row-gap: 0.125rem;
-}
-
 .gap-y-1 {
   row-gap: 0.25rem;
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem;
 }
 
 .rounded {
@@ -1474,16 +1470,8 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-.font-extrabold {
-  font-weight: 800;
-}
-
 .uppercase {
   text-transform: uppercase;
-}
-
-.tracking-wide {
-  letter-spacing: 0.025em;
 }
 
 .text-neutral-400 {
