@@ -30,7 +30,6 @@
         <i class="fa fa-users"></i> <%= team.name %>
       <% end %>
     <% end %>
-    <%= link_to 'Edit profile', '#', class: 'item' %>
     <%= button_to 'Sign out' , destroy_user_session_path, class: 'item', method: :delete %>
   </div>
 </section>

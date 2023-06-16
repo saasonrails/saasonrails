@@ -13,6 +13,10 @@ module Saasonrails
         before_action :setup_tenant
       end
 
+      def default_url_options
+        { tenant_id: params[:tenant_id] }
+      end
+
     private
       def setup_tenant
         current_account = load_current_account
