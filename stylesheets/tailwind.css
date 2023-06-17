@@ -25,11 +25,11 @@
   }
 
   #sidebar {
-    @apply flex flex-col flex-1 max-w-xs px-8 bg-white relative border-r
+    @apply hidden xl:flex flex-col flex-1 max-w-xs bg-neutral-100 relative
   }
   
   #sidebar .logo-container {
-    @apply h-navbar flex items-center justify-between
+    @apply h-navbar flex items-center justify-between bg-white px-8 border-b
   }
 
   #sidebar .logo-container .logo-text {
@@ -37,7 +37,7 @@
   }
 
   #sidebar #navigations {
-    @apply flex flex-col gap-y-10
+    @apply flex flex-col gap-y-10 px-8
   }
 
   #sidebar #navigations nav > h5 {

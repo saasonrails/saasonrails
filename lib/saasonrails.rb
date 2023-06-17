@@ -7,6 +7,8 @@ require "dry-initializer"
 require "importmap-rails"
 require "public_uid"
 require "friendly_id"
+require "loaf"
+require "meta-tags"
 
 require "omniauth"
 require "omniauth/rails_csrf_protection"
