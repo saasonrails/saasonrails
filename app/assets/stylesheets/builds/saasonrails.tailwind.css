@@ -1403,18 +1403,6 @@ h1, h2, h3 {
   border-left-width: 1px;
 }
 
-.border-t {
-  border-top-width: 1px;
-}
-
-.border-t-2 {
-  border-top-width: 2px;
-}
-
-.border-t-4 {
-  border-top-width: 4px;
-}
-
 .bg-neutral-100 {
   background-color: var(--color-neutral-100);
 }
