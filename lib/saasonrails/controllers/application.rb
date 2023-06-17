@@ -11,10 +11,16 @@ module Saasonrails
       included do
         set_current_tenant_through_filter
         before_action :setup_tenant
+        helper_method :site_name
       end
 
       def default_url_options
         { tenant_id: params[:tenant_id] }
+      end
+
+
+      def site_name
+        "SaaS on Rails"
       end
 
     private
