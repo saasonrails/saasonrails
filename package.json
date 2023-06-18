@@ -10,7 +10,7 @@
     "tailwindcss": "^3.3.2"
   },
   "scripts": {
-    "build": "npx tailwindcss -c ./config/tailwind.config.js -i ./stylesheets/tailwind.css -o ./app/assets/stylesheets/builds/saasonrails.tailwind.css",
+    "build": "npx tailwindcss -c ./config/tailwind.config.js -i ./stylesheets/tailwind.css -o ./app/assets/builds/saasonrails.tailwind.css",
     "dev": "yarn run build --watch"
   }
 }

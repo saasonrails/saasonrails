@@ -27,6 +27,10 @@
   #sidebar {
     @apply hidden xl:flex flex-col flex-1 max-w-xs bg-neutral-100 relative
   }
+
+  #sidebar .notification-bell {
+    @apply p-4 rounded-full -mr-4 text-neutral-400 hover:text-primary-700 transition
+  }
   
   #sidebar .logo-container {
     @apply h-navbar flex items-center justify-between bg-white px-8 border-b
@@ -91,6 +95,10 @@
 
   #navbar .topbar-dropdown .item:hover span {
     @apply text-neutral-700
+  }
+
+  #navbar .navbar-separator {
+    @apply w-[1px] h-10 bg-neutral-100
   }
 }
 

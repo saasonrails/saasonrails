@@ -22,9 +22,8 @@ rm -rf views/layouts
 
 ##### Add `saasonrails` to the asset pipeline
 
-```scss
-// file: app/assets/stylesheets/application.css
-*= require saasonrails
+```ruby
+<%= stylesheet_link_tag "saasonrails.tailwind", "data-turbo-track": "reload" %>
 ```
 
 ##### Add `Saasonrails::Controllers::Application` to your `ApplicationController`
