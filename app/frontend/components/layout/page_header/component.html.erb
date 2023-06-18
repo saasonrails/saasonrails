@@ -1,6 +1,18 @@
-<header class="flex flex-col gap-y-1 mb-8">
+<header class="flex flex-col gap-y-1.5 mb-8 border-b-2 pb-4">
   <h1 class="text-primary-700 font-bold uppercase text-sm"><%= title %></h1>
-  <% if subtitle.present? %>
-  <p class="text-sm text-neutral-400"><%= subtitle %></p>
+  
+  <% if breadcrumb.present? && breadcrumb.any? %>
+    <nav aria-label="breadcrumb text-xs">
+      <ol class="breadcrumb flex items-center gap-x-2 text-neutral-400 text-sm">
+        <% breadcrumb.each do |crumb| %>
+          <li class="<%= crumb.current? ? "current" : "" %>">
+            <%= link_to crumb.name, crumb.url, (crumb.current? ? {"aria-current" => "page"} : {}) %>
+          </li>
+          <% unless crumb.current? %><li><i class="fa-solid fa-caret-right text-xs text-neutral-300"></i></li><% end %>
+        <% end %>
+      </ol>
+    </nav>
+  <% elsif subtitle.present? %>
+    <p class="text-sm text-neutral-400"><%= subtitle %></p>
   <% end %>
 </header>
