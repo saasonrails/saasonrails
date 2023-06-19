@@ -149,11 +149,11 @@
 **/
 @layer base {
   .box {
-    @apply border bg-white
+    @apply shadow-sm bg-white rounded
   }
 
   .box header {
-    @apply flex p-5 border-b
+    @apply flex p-5 border-b 
   }
 
   .box header h2 {
