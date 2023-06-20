@@ -1354,6 +1354,14 @@ h1, h2, h3 {
   width: 100%;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
@@ -1434,6 +1442,10 @@ h1, h2, h3 {
   row-gap: 0.5rem;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -1456,6 +1468,11 @@ h1, h2, h3 {
 
 .bg-neutral-50 {
   background-color: var(--color-neutral-50);
+}
+
+.bg-rose-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
 }
 
 .bg-white {
