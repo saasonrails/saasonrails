@@ -8,6 +8,7 @@
     <section id="page">
       <%= render "shared/navbar" %>
       <main>
+        <%= render "shared/flash_messages" if flash.any? %>
         <%= yield %>
       </main>
     </section>

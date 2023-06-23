@@ -1,0 +1,13 @@
+<div class="px-8 py-5 text-sm bg-white border-b">
+<% flash.each do |type, message| %>
+  <% if type == "notice" %>
+    <div class="flex items-center text-primary-700">
+      <i class="fa fa-square-check text-xl mr-3"></i> <%= message %>
+    </div>
+  <% elsif type == "error" %>
+    <div class="flex items-center text-rose-500">
+      <i class="fa fa-square-xmark text-xl mr-3"></i> <%= message %>
+    </div>
+  <% end %>
+<% end %>
+</div>
