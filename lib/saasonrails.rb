@@ -9,6 +9,8 @@ require "public_uid"
 require "friendly_id"
 require "loaf"
 require "meta-tags"
+require "ancestry"
+require "acts_as_list"
 
 require "omniauth"
 require "omniauth/rails_csrf_protection"
