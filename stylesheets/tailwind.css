@@ -8,7 +8,7 @@
 @layer components {
   .h-navbar { @apply h-[4.5em] }
   .font-headings { 
-    font-family: 'Jost';
+    font-family: 'Work Sans';
   }
 
   body {
