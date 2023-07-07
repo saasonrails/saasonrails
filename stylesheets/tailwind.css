@@ -142,6 +142,22 @@
   .button.xxl {
     @apply px-8 py-4 text-lg
   }
+
+  .dropdown-button {
+    @apply relative block;
+  }
+
+  .dropdown-button .items {
+    @apply z-50 w-min bg-white divide-y left-auto right-8 -mt-8 absolute shadow border rounded whitespace-nowrap;
+  }
+
+  .dropdown-button .items .item {
+    @apply block w-full p-4 py-3 text-right items-center text-xs hover:bg-neutral-100 hover:text-neutral-900 transition;
+  }
+  
+  .dropdown-button .items .item .icon {
+    @apply w-4 text-center ml-2
+  }
 }
 
 /**
@@ -178,7 +194,7 @@
   }
 
   .box table tbody td {
-    @apply text-sm;
+    @apply text-xs;
   }
 
   .box table thead th.mini,
@@ -220,7 +236,7 @@
   }
 
   .input {
-    @apply flex flex-col relative p-5 border-b
+    @apply flex flex-col relative p-5 border-b w-full
   }
 
   .input abbr {
@@ -249,8 +265,11 @@
     @apply 
   } */
 
-  .input input.disabled {
-    @apply text-primary-700 border-0 p-0
+  .input.disabled label,
+  .input.disabled input,
+  .input.disabled select,
+  .input.disabled textarea {
+    @apply text-black opacity-40
   }
 
   .input.boolean {

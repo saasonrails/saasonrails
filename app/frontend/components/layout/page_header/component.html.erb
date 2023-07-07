@@ -1,18 +1,24 @@
-<header class="flex flex-col gap-y-1.5 mb-8 border-b-2 pb-4">
-  <h1 class="text-primary-700 font-bold uppercase text-sm"><%= title %></h1>
-  
-  <% if breadcrumb.present? && breadcrumb.any? %>
-    <nav aria-label="breadcrumb text-xs">
-      <ol class="breadcrumb flex items-center gap-x-2 text-neutral-400 text-sm">
-        <% breadcrumb.each do |crumb| %>
-          <li class="<%= crumb.current? ? "current" : "" %>">
-            <%= link_to crumb.name, crumb.url, (crumb.current? ? {"aria-current" => "page"} : {}) %>
-          </li>
-          <% unless crumb.current? %><li><i class="fa-solid fa-caret-right text-xs text-neutral-300"></i></li><% end %>
-        <% end %>
-      </ol>
-    </nav>
-  <% elsif subtitle.present? %>
-    <p class="text-sm text-neutral-400"><%= subtitle %></p>
-  <% end %>
+<header class="flex mb-8 border-b-2 pb-4">
+  <div class="flex flex-1 flex-col gap-y-1.5">
+    <h1 class="text-primary-700 font-bold uppercase text-sm"><%= title %></h1>
+    
+    <% if breadcrumb.present? && breadcrumb.any? %>
+      <nav aria-label="breadcrumb text-xs">
+        <ol class="breadcrumb flex items-center gap-x-2 text-neutral-400 text-sm">
+          <% breadcrumb.each do |crumb| %>
+            <li class="<%= crumb.current? ? "current" : "" %>">
+              <%= link_to crumb.name, crumb.url, (crumb.current? ? {"aria-current" => "page"} : {}) %>
+            </li>
+            <% unless crumb.current? %><li><i class="fa-solid fa-caret-right text-xs text-neutral-300"></i></li><% end %>
+          <% end %>
+        </ol>
+      </nav>
+    <% elsif subtitle.present? %>
+      <p class="text-sm text-neutral-400"><%= subtitle %></p>
+    <% end %>
+  </div>
+
+  <div class="flex items-center justify-center gap-x-3">
+    <%= content %>
+  </div>
 </header>

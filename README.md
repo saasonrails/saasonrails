@@ -14,7 +14,7 @@ Add this line to your application's Gemfile:
 gem "saasonrails"
 ```
 
-##### Delete the `views/layouts/` directory
+##### Delete the `app/views/layouts/` directory
 
 ```console
 rm -rf views/layouts
