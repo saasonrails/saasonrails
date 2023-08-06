@@ -17,7 +17,7 @@ gem "saasonrails"
 ##### Delete the `app/views/layouts/` directory
 
 ```console
-rm -rf views/layouts
+rm -rf app/views/layouts
 ```
 
 ##### Add `Saasonrails::Controllers::Application` to your `ApplicationController`

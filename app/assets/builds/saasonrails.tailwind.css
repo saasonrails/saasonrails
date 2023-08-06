@@ -556,6 +556,8 @@ video {
 
 .form-actions .form-button.primary:hover,.form-actions .form-button.ql-active:hover {
   background-color: var(--color-primary-600);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .button.form-actions .form-button {
@@ -566,6 +568,8 @@ video {
 
 .button.form-actions .form-button:hover {
   background-color: var(--color-primary-600);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .form-actions .form-button.primary,.form-actions .form-button.ql-active {
@@ -576,6 +580,8 @@ video {
 
 .form-actions .form-button.primary:hover,.form-actions .form-button.ql-active:hover {
   background-color: var(--color-primary-600);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .form-actions .form-button.danger {
@@ -927,8 +933,6 @@ h1, h2, h3 {
 #sidebar {
   position: relative;
   display: none;
-  max-width: 20rem;
-  flex: 1 1 0%;
   flex-direction: column;
   background-color: var(--color-neutral-100);
 }
@@ -1031,7 +1035,6 @@ h1, h2, h3 {
 #page {
   position: relative;
   display: flex;
-  flex: 1 1 0%;
   flex-direction: column;
 }
 
@@ -1193,6 +1196,8 @@ h1, h2, h3 {
 .button.primary:hover,
   .button.ql-active:hover {
   background-color: var(--color-primary-600);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .button.danger {
@@ -1712,4 +1717,18 @@ h1, h2, h3 {
 
 .hover\:text-primary-700:hover {
   color: var(--color-primary-700);
+}
+
+@media (min-width: 1280px) {
+  .xl\:col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
+  .xl\:grid {
+    display: grid;
+  }
+
+  .xl\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
