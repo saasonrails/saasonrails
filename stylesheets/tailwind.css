@@ -6,9 +6,13 @@
  * application.html.erb
 **/
 @layer components {
-  .h-navbar { @apply h-[4.5em] }
+  .h-navbar { @apply h-[60px] }
   .font-headings { 
-    font-family: 'Work Sans';
+    font-family: 'Poppins';
+  }
+
+  html {
+    font-size: 13px;
   }
 
   body {
@@ -37,7 +41,7 @@
   }
 
   #sidebar .logo-container .logo-text {
-    @apply font-headings p-4 -ml-4 text-xl font-bold text-primary-700 hover:text-primary-800 transition
+    @apply font-headings p-4 -ml-4 text-2xl font-bold text-primary-700 hover:text-primary-800 transition
   }
 
   #sidebar #navigations {
@@ -45,16 +49,16 @@
   }
 
   #sidebar #navigations nav > h5 {
-    @apply text-xs text-primary-700 font-headings font-bold uppercase mb-5
+    @apply text-primary-700 font-headings text-sm font-bold uppercase mb-5
   }
 
   #sidebar #navigations nav > ul {
-    @apply flex flex-col gap-y-4
+    @apply flex flex-col gap-y-3
   }
 
   #sidebar #navigations nav > ul > li > a,
   #sidebar #navigations nav > ul > li .as-link {
-    @apply flex gap-x-3 items-center w-full text-sm font-semibold text-neutral-600 hover:text-primary-900
+    @apply flex gap-x-3 items-center w-full font-semibold text-neutral-600 hover:text-primary-900
   }
 
   #page {
@@ -82,7 +86,7 @@
   }
 
   #navbar .topbar-dropdown .content span {
-    @apply text-xs text-slate-400 font-normal;
+    @apply text-sm text-slate-400 font-normal;
   }
 
   #navbar .topbar-dropdown .items {
@@ -90,7 +94,7 @@
   }
 
   #navbar .topbar-dropdown .items .item {
-    @apply flex w-full p-4 gap-x-4 items-center text-xs hover:bg-neutral-100 hover:text-neutral-900 transition;
+    @apply flex text-sm w-full p-4 gap-x-4 items-center hover:bg-neutral-100 hover:text-neutral-900 transition;
   }
 
   #navbar .topbar-dropdown .item:hover span {
@@ -111,7 +115,7 @@
   }
 
   .button {
-    @apply inline-flex items-center gap-x-1 py-2 px-3 leading-3 justify-center rounded transition shadow hover:shadow-none text-xs bg-neutral-50 font-bold whitespace-nowrap cursor-pointer;
+    @apply inline-flex items-center gap-x-1 py-3 px-4 text-sm leading-3 justify-center rounded transition shadow hover:shadow-none bg-neutral-50 font-bold whitespace-nowrap cursor-pointer;
   }
 
   .button.primary,
@@ -131,12 +135,16 @@
     @apply px-2 py-1 text-xs
   }
 
+  .button.sm {
+    @apply px-3 py-2 text-sm
+  }
+
   .button.lg {
-    @apply px-4 py-2 text-sm
+    @apply px-4 py-2 text-base
   }
 
   .button.xl {
-    @apply px-6 py-3 text-base
+    @apply px-6 py-3 text-lg
   }
 
   .button.xxl {
@@ -169,11 +177,11 @@
   }
 
   .box header {
-    @apply flex p-5 border-b 
+    @apply flex p-5 border-b
   }
 
   .box header h2 {
-    @apply font-normal text-xs text-primary-700
+    @apply font-normal text-primary-700
   }
 
   .box table {
@@ -186,15 +194,11 @@
 
   .box table th,
   .box table td {
-    @apply text-left text-sm px-5 py-2 border-r
+    @apply px-5 py-2 border-r last:border-r-0
   }
 
   .box table thead th {
-    @apply text-xs bg-white py-4 uppercase text-primary-700;
-  }
-
-  .box table tbody td {
-    @apply text-xs;
+    @apply bg-white py-3 font-bold text-sm uppercase text-primary-700;
   }
 
   .box table thead th.mini,
@@ -258,7 +262,7 @@
   .input input:not([type="checkbox"]),
   .input textarea,
   .input select {
-    @apply appearance-none p-0 m-0 w-full border-0 focus:ring-0 focus:outline-none text-sm bg-white text-neutral-500 hover:text-primary-800 focus:text-primary-800 placeholder-neutral-400
+    @apply appearance-none p-0 m-0 w-full border-0 focus:ring-0 focus:outline-none bg-white text-neutral-500 hover:text-primary-800 focus:text-primary-800 placeholder-neutral-400
   }
 
   /* .input input[type="checkbox"] {
@@ -293,7 +297,7 @@
   }
 
   .input.editor .editor-body .ql-editor {
-    @apply w-full focus:outline-0 text-sm min-h-[40px]
+    @apply w-full focus:outline-0 min-h-[40px]
   }
 
   .input.editor .editor-body .ql-clipboard {

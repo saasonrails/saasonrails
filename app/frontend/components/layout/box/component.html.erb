@@ -1,3 +1,11 @@
 <div class="box <%= html.dig(:class) %>">
+  <% if title.present? %>
+    <header class="flex flex-col gap-y-0.5">
+      <h3 class="text-primary-700 font-headings text-lg font-bold"><%= title %></h3>
+      <% if subtitle.present? %>
+        <p class="text-neutral-500 text-sm"><%= subtitle %></p>
+      <% end %>
+    </header>
+  <% end %>
   <%= content %>
 </div>
