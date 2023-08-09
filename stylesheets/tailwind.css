@@ -252,7 +252,7 @@
   }
 
   .input label {
-    @apply text-primary-700 font-headings text-xs mb-2 uppercase whitespace-nowrap
+    @apply text-primary-700 font-headings font-bold text-sm mb-1.5 uppercase whitespace-nowrap
   }
 
   .input .hint {
@@ -289,7 +289,7 @@
   }
 
   .input .error {
-    @apply text-xs text-red-500 mt-2 absolute top-2 right-5 font-bold
+    @apply text-sm text-red-500 mt-2 absolute top-2 right-5 font-bold
   }
 
   .repeatable {
