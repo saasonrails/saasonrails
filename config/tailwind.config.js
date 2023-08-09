@@ -48,6 +48,7 @@ module.exports = {
   },
   plugins: [],
   safelist: [
-    'wrapper'
+    'wrapper',
+    'content-placeholder'
   ]
 }

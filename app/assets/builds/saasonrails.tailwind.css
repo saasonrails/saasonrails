@@ -930,6 +930,26 @@ body {
   padding: 2rem;
 }
 
+.content-placeholder {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  display: block;
+  height: 12px;
+  width: 100%;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.content-placeholder {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border-radius: 0.25rem;
+  background-color: var(--color-neutral-100);
+}
+
 h1, h2, h3 {
   font-family: 'Poppins';
   color: var(--color-neutral-600);
@@ -1301,8 +1321,8 @@ h1, h2, h3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-align: right;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;

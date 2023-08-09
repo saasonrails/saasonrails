@@ -24,6 +24,10 @@
     @apply w-full p-8
   }
 
+  .content-placeholder {
+    @apply block bg-neutral-100 animate-pulse h-[12px] my-[2px] rounded w-full
+  }
+
   h1, h2, h3 {
     @apply font-headings text-neutral-600
   }
@@ -160,7 +164,7 @@
   }
 
   .dropdown-button .items .item {
-    @apply block w-full p-4 py-3 text-right items-center text-xs hover:bg-neutral-100 hover:text-neutral-900 transition;
+    @apply block w-full p-4 py-3 text-right items-center text-sm hover:bg-neutral-100 hover:text-neutral-900 transition;
   }
   
   .dropdown-button .items .item .icon {
