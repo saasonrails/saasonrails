@@ -12,7 +12,7 @@
   }
 
   html {
-    font-size: 13px;
+    font-size: 13.5px;
   }
 
   body {
@@ -57,12 +57,16 @@
   }
 
   #sidebar #navigations nav > ul {
-    @apply flex flex-col gap-y-3
+    @apply flex flex-col gap-y-4
   }
 
   #sidebar #navigations nav > ul > li > a,
   #sidebar #navigations nav > ul > li .as-link {
-    @apply flex gap-x-3 items-center w-full font-semibold text-neutral-600 hover:text-primary-900
+    @apply flex items-center w-full font-semibold text-neutral-600 hover:text-primary-900
+  }
+
+  #sidebar #navigations nav>ul>li>a:hover span {
+    @apply text-neutral-500
   }
 
   #page {

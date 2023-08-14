@@ -36,7 +36,6 @@ module Saasonrails
             flash[:notice] = "Your #{kind.titleize} account was connected."
             redirect_to edit_user_registration_path
           else
-            flash[:notice] = "Your new user account was created!"
             sign_in_and_redirect user, event: :authentication
           end
         end
@@ -67,7 +66,7 @@ module Saasonrails
             @user = external_login.user
           elsif User.where(email: auth.info.email).any?
             # 5. User is logged out and they login to a new account which doesn't match their old one
-            flash[:alert] = "An account with this email already exists. Please sign in with that account before connecting your #{auth.provider.titleize} account."
+            flash[:alert] = "An account with this email already exists. Please sign in with that account first to link your #{auth.provider.titleize} account."
             redirect_to new_user_session_path
           else
             @user = build_user

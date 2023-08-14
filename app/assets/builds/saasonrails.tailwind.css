@@ -918,7 +918,7 @@ video {
 }
 
 html {
-  font-size: 13px;
+  font-size: 13.5px;
 }
 
 body {
@@ -1037,7 +1037,7 @@ h1, h2, h3 {
 #sidebar #navigations nav > ul {
   display: flex;
   flex-direction: column;
-  row-gap: 0.75rem;
+  row-gap: 1rem;
 }
 
 #sidebar #navigations nav > ul > li > a,
@@ -1045,8 +1045,6 @@ h1, h2, h3 {
   display: flex;
   width: 100%;
   align-items: center;
-  -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
   font-weight: 600;
   color: var(--color-neutral-600);
 }
@@ -1054,6 +1052,10 @@ h1, h2, h3 {
 #sidebar #navigations nav > ul > li > a:hover,
   #sidebar #navigations nav > ul > li .as-link:hover {
   color: var(--color-primary-900);
+}
+
+#sidebar #navigations nav>ul>li>a:hover span {
+  color: var(--color-neutral-500);
 }
 
 #page {
@@ -1389,6 +1391,10 @@ h1, h2, h3 {
 
 .mr-3 {
   margin-right: 0.75rem;
+}
+
+.mt-32 {
+  margin-top: 8rem;
 }
 
 .mt-8 {
