@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   namespace :onboarding do
     resource :personal_account, only: %i[new create]
   end
+
+  namespace :settings do
+    resources :oauth_external_logins, only: %i[index], path: 'connected-accounts'
+  end
 end

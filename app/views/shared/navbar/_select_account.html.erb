@@ -32,6 +32,11 @@
         <i class="fa fa-users"></i> <%= team.name %>
       <% end %>
     <% end %>
+
+    <%= link_to settings_oauth_external_logins_path, class: 'item' do %>
+      <i class="fas fa-user-gear"></i> Account settings
+    <% end %>
+
     <%= button_to 'Sign out' , destroy_user_session_path, class: 'item', method: :delete %>
   </div>
 </section>

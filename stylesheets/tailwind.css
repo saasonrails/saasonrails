@@ -140,7 +140,7 @@
   }
 
   .button.xs {
-    @apply px-2 py-1 text-xs
+    @apply px-2 py-1 text-sm
   }
 
   .button.sm {

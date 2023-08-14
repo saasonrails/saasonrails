@@ -1,0 +1,48 @@
+<% title "Settings" %>
+<div class="wrapper">
+  <%= render(Layout::PageHeader::Component.new(
+    title: "Connected accounts", 
+    breadcrumb: breadcrumb_trail(match: :exact)
+  )) %>
+
+  <div class="grid grid-cols-3 gap-5">
+    <main class="col-span-2">
+      <%= render(Layout::Box::Component.new(title: "All connected accounts", subtitle: "Connected accounts can access your personal and team accounts.")) do %>
+        <table class="text-sm">
+          <thead>
+            <th class="mini"></th>
+            <th class="w-0 text-left">Provider</th>
+            <th class="text-left">Account</th>
+            <th class="mini">Expires at</th>
+            <th class="text-left">Added at</th>
+            <th class="mini"></th>
+          </thead>
+          <tbody>
+            <% if @connected_accounts.any? %>
+              <% @connected_accounts.each do |connected_account| %>
+                <tr>
+                  <th class="w-0"><i class="<%= provider_icon_class(connected_account.provider) %>"></i></th>
+                  <td class="w-0"><%= connected_account.provider %></td>
+                  <td><%= connected_account.uid %></td>
+                  <td>
+                    <%= connected_account.expires_at || 'never' %>
+                  </td>
+                  <td class="whitespace-nowrap"><%= connected_account.created_at.to_formatted_s(:long) %>
+                  <td>
+                    <%= link_to 'Unlink account', '#', class: 'button xs' %>
+                  </td>
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="6">
+                  <div class="text-center text-red-500 py-1.5">No connected accounts</div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </main>
+  </div>
+</div>
