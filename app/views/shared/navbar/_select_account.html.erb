@@ -26,6 +26,7 @@
     <%= link_to root_path(tenant_id: nil), class: 'item' do %>
       <i class="fa fa-user"></i> <%= current_user.personal_account.name %>
     <% end %>
+
     <% current_user.teams.each do |team| %>
       <%= link_to root_path(tenant_id: team), class: 'item' do %>
         <i class="fa fa-users"></i> <%= team.name %>

@@ -3,6 +3,8 @@
   <p class="text-neutral-400">Sign in with your email address and password or select any of the other available options below.</p>
 <% end %>
 
+<%= render "devise/shared/social_auth_buttons" %>
+
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,

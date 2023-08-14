@@ -7,9 +7,7 @@ module Saasonrails
       include PublicUid::ModelConcern
 
       included do
-        devise :database_authenticatable, :registerable, :omniauthable,
-          :recoverable, :rememberable, :validatable, :lockable,
-          :timeoutable, :trackable
+        devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :lockable, :timeoutable, :trackable
 
         has_many   :external_logins, class_name: "OauthExternalLogin"
         has_many   :account_users
