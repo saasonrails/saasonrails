@@ -11,15 +11,13 @@ require "loaf"
 require "meta-tags"
 require "ancestry"
 require "acts_as_list"
-
 require "omniauth"
 require "omniauth/rails_csrf_protection"
-
 require "view_component"
 require "view_component-contrib"
-
 require "saasonrails/version"
 require "saasonrails/engine"
+require "str_enum"
 
 module Saasonrails
   module Controllers

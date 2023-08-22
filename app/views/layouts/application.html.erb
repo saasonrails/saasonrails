@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
   <%= render "shared/head" %>
-  <body class="<%= @body_class %> min-h-screen xl:grid xl:grid-cols-5 w-full antialiased text-neutral-600 bg-neutral-50">
-    <aside id="sidebar">
-      <%= render "shared/sidebar" %>
-    </aside>
-    <section id="page" class="pb-32 xl:col-span-4">
-      <%= render "shared/navbar" %>
-      <main>
-        <%= render "shared/flash_messages" if flash.any? %>
-        <%= yield %>
-      </main>
-    </section>
+  <body class="<%= @body_class %> relative">
+    <div class="min-h-screen xl:grid xl:grid-cols-5 w-full antialiased text-neutral-600 bg-neutral-50">
+      <aside id="sidebar">
+        <%= render "shared/sidebar" %>
+      </aside>
+      <section id="page" class="pb-32 xl:col-span-4">
+        <%= render "shared/navbar" %>
+        <main>
+          <%= render "shared/flash_messages" if flash.any? %>
+          <%= yield %>
+        </main>
+      </section>
+    </div>
+    <%= render "shared/notification_toasts" %>
   </body>
 </html>

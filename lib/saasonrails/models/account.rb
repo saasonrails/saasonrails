@@ -8,6 +8,8 @@ module Saasonrails
 
       included do
         validates :name, presence: true
+
+        has_many :notifications, dependent: :destroy
       end
     end
   end

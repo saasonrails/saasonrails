@@ -35,10 +35,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ancestry", "~> 4.3.3"
   spec.add_dependency "omniauth", "~> 2.1.1"
   spec.add_dependency "omniauth-rails_csrf_protection", "~> 1.0.1"
-
   spec.add_dependency "view_component", "~> 3.1"
   spec.add_dependency "view_component-contrib", "~> 0.1.4"
-
   spec.add_dependency "dry-initializer", "~> 3.1"
   spec.add_dependency "public_uid", "~> 2.2.0"
+  spec.add_dependency "str_enum", "~> 0.2.0"
 end

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,25 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_15_164759) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_20_192546) do
   create_table "account_users", force: :cascade do |t|
+    t.string "public_uid"
     t.integer "user_id", null: false
     t.integer "account_id", null: false
     t.string "role", default: "owner", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_account_users_on_account_id"
+    t.index ["public_uid"], name: "index_account_users_on_public_uid", unique: true
     t.index ["user_id"], name: "index_account_users_on_user_id"
   end
 
   create_table "accounts", force: :cascade do |t|
+    t.string "public_uid"
     t.string "name", null: false
     t.boolean "personal_account", default: false
+    t.integer "projects_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["public_uid"], name: "index_accounts_on_public_uid", unique: true
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "public_uid", null: false
+    t.integer "account_id", null: false
+    t.string "message", null: false
+    t.string "status", default: "info", null: false
+    t.string "icon_class", default: "fas fa-info-circle", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_notifications_on_account_id"
+    t.index ["public_uid"], name: "index_notifications_on_public_uid", unique: true
   end
 
   create_table "oauth_external_logins", force: :cascade do |t|
+    t.string "public_uid"
     t.integer "user_id", null: false
     t.string "provider", null: false
     t.string "uid", null: false
@@ -40,10 +56,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_164759) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_oauth_external_logins_on_provider_and_uid"
+    t.index ["public_uid"], name: "index_oauth_external_logins_on_public_uid", unique: true
     t.index ["user_id"], name: "index_oauth_external_logins_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "public_uid"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -67,12 +85,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_164759) do
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["personal_account_id"], name: "index_users_on_personal_account_id"
+    t.index ["public_uid"], name: "index_users_on_public_uid", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   add_foreign_key "account_users", "accounts"
   add_foreign_key "account_users", "users"
+  add_foreign_key "notifications", "accounts"
   add_foreign_key "oauth_external_logins", "users"
   add_foreign_key "users", "accounts", column: "personal_account_id"
 end

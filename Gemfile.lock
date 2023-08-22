@@ -16,6 +16,7 @@ PATH
       public_uid (~> 2.2.0)
       rails (>= 7.0.5)
       simple_form (~> 5.2)
+      str_enum (~> 0.2.0)
       view_component (~> 3.1)
       view_component-contrib (~> 0.1.4)
 
@@ -259,6 +260,8 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-arm64-darwin)
+    str_enum (0.2.0)
+      activesupport (>= 5)
     thor (1.2.2)
     timeout (0.3.2)
     tzinfo (2.0.6)

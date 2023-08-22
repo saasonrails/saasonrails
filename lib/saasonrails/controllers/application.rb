@@ -18,6 +18,9 @@ module Saasonrails
         { tenant_id: params[:tenant_id] }
       end
 
+      def notify(message, status = :notice)
+        current_tenant.notifications.create(message:, status:)
+      end
 
       def site_name
         "SaaS on Rails"
