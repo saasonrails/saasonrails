@@ -4,4 +4,12 @@
     title: "Notifications", 
     subtitle: "Latest events within your account."
   )) %>
+
+  <% if @notifications.any? %>
+    <section class="flex flex-col gap-5">
+      <% @notifications.each do |notification| %>
+        <%= render notification %>
+      <% end %>
+    </section>
+  <% end %>
 </div>

@@ -1,0 +1,6 @@
+<%= turbo_stream_from :notification_toasts %>
+<section id="notification-toasts" class="fixed flex flex-col z-50 bottom-10 right-10 gap-3 w-full max-w-[600px]">
+  <% Notification.for_toasts.each do |notification| %>
+    <%= render partial: "shared/notifications/notification", locals: { notification: notification } %>
+  <% end %>
+</div>

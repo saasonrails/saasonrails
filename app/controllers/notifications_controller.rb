@@ -2,6 +2,6 @@
 
 class NotificationsController < ApplicationController
   def index
-    @notifications = Notification.all
+    @notifications = Notification.order(created_at: :desc)
   end
 end
