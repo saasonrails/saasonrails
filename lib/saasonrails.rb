@@ -17,6 +17,7 @@ require "view_component"
 require "view_component-contrib"
 require "saasonrails/version"
 require "saasonrails/engine"
+require "sidekiq"
 require "str_enum"
 
 module Saasonrails
@@ -28,6 +29,10 @@ module Saasonrails
     module Onboarding
       autoload :PersonalAccounts, "saasonrails/controllers/onboarding/personal_accounts"
     end
+  end
+
+  module Operations
+    autoload :Base, "saasonrails/operations/base"
   end
 
   module Teamable

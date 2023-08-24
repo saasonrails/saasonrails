@@ -40,4 +40,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "dry-initializer", "~> 3.1"
   spec.add_dependency "public_uid", "~> 2.2.0"
   spec.add_dependency "str_enum", "~> 0.2.0"
+  spec.add_dependency "sidekiq", "~> 7.1"
 end

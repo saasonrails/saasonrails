@@ -11,7 +11,7 @@ module Saasonrails
         str_enum :status, [:notice, :queued, :running, :finished, :failed]
         validates :message, presence: true
 
-        scope :for_toasts, -> { where("status != ? AND status != ?", :finished, :failed).order(created_at: "DESC").take(3).reverse }
+        scope :for_toasts, -> { where("STATUS != ? AND STATUS != ?", :notice, :finished).order(status: "DESC", created_at: "DESC").take(3).reverse }
 
         after_update_commit -> { broadcast_replace_to [:notification_toasts], partial: "shared/notifications/notification", locals: { notification: self } }
       end
