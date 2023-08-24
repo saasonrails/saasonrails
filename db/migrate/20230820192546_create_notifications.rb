@@ -7,6 +7,7 @@ class CreateNotifications < ActiveRecord::Migration[7.0]
       t.references :account, null: false, foreign_key: true
 
       t.string :message, null: false
+      t.string :error_message
       t.string :status, null: false, default: "notice"
       t.string :icon_class, null: false, default: "fas fa-info-circle"
 

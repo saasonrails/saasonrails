@@ -11,7 +11,7 @@ module Saasonrails
         run(*args)
         @notification.update(status: :finished)
       rescue StandardError => e
-        @notification.update(status: :failed) # error: e.message
+        @notification.update(status: :failed, error_message: e.message) # error: e.message
       end
 
       class << self
