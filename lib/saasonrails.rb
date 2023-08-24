@@ -18,6 +18,7 @@ require "view_component-contrib"
 require "saasonrails/version"
 require "saasonrails/engine"
 require "sidekiq"
+require "sidekiq/web"
 require "str_enum"
 
 module Saasonrails
