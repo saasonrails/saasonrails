@@ -5,32 +5,38 @@ module Saasonrails
     class Base
       include Sidekiq::Job
 
-      def perform(notification_id, *args)
-        @notification = Notification.find(notification_id)
-        @notification.update(status: :running)
-        run(*args)
-        @notification.update(status: :finished)
-      rescue StandardError => e
-        @notification.update(status: :failed, error_message: e.message) # error: e.message
+      def perform(operation_id)
+        @operation = Operation.find(operation_id)
+        @account = @operation.account
+
+        before_run
+        run
+        after_run
+      rescue => e
+        @operation.update!(status: :failed)
+      end
+
+      def before_run
+        @operation.update!(status: :running)
+      end
+
+      def after_run
+        @operation.update!(status: :success)
+      end
+
+      def args
+        @args ||= HashWithIndifferentAccess.new(@operation.arguments)
       end
 
       class << self
-        def perform_async(*args)
-          raise "Account is not set" unless ActsAsTenant.current_tenant
-
-          notification = Notification.create!(status: :queued, message: self::default_message(*args))
-          super(notification.id, *args)
+        def default_message(args)
+          "running #{self.name} operation"
         end
 
-        def default_message(*args)
-          "Running #{self.name} with args: #{args.inspect}"
+        def success_message(args)
+          "Finished " + default_message(args).downcase
         end
       end
-
-      private
-        def set_message(message)
-          @notification.update(message:)
-        end
     end
   end
 end

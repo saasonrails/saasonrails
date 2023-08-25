@@ -1,0 +1,6 @@
+<%= turbo_stream_from :operation_toasts %>
+<section id="operation-toasts" class="fixed flex flex-col z-50 bottom-10 right-10 gap-3 w-full max-w-[600px]">
+  <% Operation.for_toasts.each do |operation| %>
+    <%= render partial: "shared/operations/operation", locals: { operation: } %>
+  <% end %>
+</div>

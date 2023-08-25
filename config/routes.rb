@@ -13,7 +13,5 @@ Rails.application.routes.draw do
     resources :oauth_external_logins, only: %i[index], path: "connected-accounts"
   end
 
-  scope "(/team/:tenant_id)", tenant_id: /[^\/]+/ do
-    resources :notifications, only: %i[index]
-  end
+  # scope "(/team/:tenant_id)", tenant_id: /[^\/]+/ do; end
 end

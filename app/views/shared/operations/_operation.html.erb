@@ -1,0 +1,14 @@
+<article id="<%= dom_id(operation) %>" class="box shadow flex py-5 justify-start items-center">
+  <%= link_to "#", class: "flex flex-1 justify-start items-center" do %>
+    <div class="w-16 flex items-center justify-center">
+      <i class="<%= operation.icon_class %>"></i>
+    </div>
+    <div class="flex flex-grow flex-col gap-y-0.5 border-x px-5">
+      <span class="text-xs font-bold text-primary-700"><%= operation.status.upcase %></span>
+      <span class="text-neutral-500 text-sm"><%= operation.message %></span>
+    </div>
+    <div class="w-16 flex justify-center items-center">
+      <i class="fas fa-info-circle text-primary-700"></i>
+    </div>
+  <% end %>
+</article>

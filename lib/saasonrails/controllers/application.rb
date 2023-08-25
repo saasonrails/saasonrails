@@ -4,8 +4,6 @@ module Saasonrails
   module Controllers
     module Application
       extend ActiveSupport::Concern
-
-      # include Saasonrails::Teamable::CurrentAccountHelper
       include Saasonrails::Controllers::Secure
 
       included do
@@ -16,10 +14,6 @@ module Saasonrails
 
       def default_url_options
         { tenant_id: params[:tenant_id] }
-      end
-
-      def notify(message, status = :notice)
-        current_tenant.notifications.create(message:, status:)
       end
 
       def site_name
