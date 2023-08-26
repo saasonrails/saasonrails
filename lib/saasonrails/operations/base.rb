@@ -13,7 +13,7 @@ module Saasonrails
         run
         after_run
       rescue => e
-        @operation.update!(status: :failed)
+        @operation.update!(status: :failed, error_message: e.message)
       end
 
       def before_run
