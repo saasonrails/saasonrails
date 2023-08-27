@@ -49,7 +49,7 @@ module Saasonrails
 
       private
         def worker_class
-          @worker_class ||= "#{worker_name}_operation".classify.constantize
+          "#{worker_name}_operation".classify.constantize
         end
     end
   end

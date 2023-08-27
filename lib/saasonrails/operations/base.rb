@@ -35,7 +35,7 @@ module Saasonrails
         end
 
         def success_message(args)
-          "Finished " + default_message(args).downcase
+          default_message(args)
         end
       end
     end
