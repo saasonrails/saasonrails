@@ -11,7 +11,7 @@
       <% end %>
     </div>
     <div class="w-16 flex justify-center items-center">
-      <i class="fas fa-info-circle text-primary-700"></i>
+      <% if operation.failed? %><i class="fas fa-rotate-left text-primary-700"></i><% end %>
     </div>
   <% end %>
 </article>

@@ -31,7 +31,7 @@ module Saasonrails
       end
 
       def run_async!
-        worker_class.perform_async(id)
+        worker_class.perform_in(1.second, id)
       end
 
       def icon_class
