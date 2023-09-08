@@ -12,8 +12,8 @@ module Saasonrails
         has_many :operations, dependent: :destroy
       end
 
-      def create_operation(worker_name, arguments)
-        operations.create(worker_name:, arguments:)
+      def create_operation(worker_name, payload)
+        operations.create(worker_name:, payload:)
       end
     end
   end

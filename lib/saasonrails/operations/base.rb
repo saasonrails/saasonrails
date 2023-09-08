@@ -26,7 +26,7 @@ module Saasonrails
       end
 
       def args
-        HashWithIndifferentAccess.new(@_operation.arguments)
+        HashWithIndifferentAccess.new(@_operation.payload)
       end
 
       class << self

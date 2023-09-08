@@ -20,9 +20,9 @@ module Saasonrails
 
       def message
         if status == "success"
-          worker_class::success_message(HashWithIndifferentAccess.new(arguments))
+          worker_class::success_message(HashWithIndifferentAccess.new(payload))
         else
-          worker_class::default_message(HashWithIndifferentAccess.new(arguments))
+          worker_class::default_message(HashWithIndifferentAccess.new(payload))
         end
       end
 
@@ -31,7 +31,7 @@ module Saasonrails
       end
 
       def run_async!
-        worker_class.perform_in(1.second, id)
+        worker_class.perform_in(2.seconds, id)
       end
 
       def icon_class
