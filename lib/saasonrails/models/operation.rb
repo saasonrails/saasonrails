@@ -15,7 +15,9 @@ module Saasonrails
         scope :for_toasts, -> { order(created_at: "DESC").take(3).reverse }
 
         after_create :run_async!
-        after_update_commit -> { broadcast_replace_to [:operation_toasts], partial: "shared/operations/operation", locals: { operation: self } }
+        after_create_commit -> { broadcast_append target: :operation_toasts, partial: "shared/operations/operation", locals: { operation: self } }
+        after_update_commit -> { broadcast_replace_to :operation_toasts, partial: "shared/operations/operation", locals: { operation: self } }
+        after_destroy_commit -> { broadcast_remove_to :operation_toasts }
       end
 
       def message
