@@ -12,7 +12,7 @@ module Saasonrails
 
         validates :worker_name, presence: true
 
-        scope :for_toasts, -> { order(created_at: "DESC").take(3).reverse }
+        scope :for_toasts, -> { where("status != ?", "success").order(status: "DESC", created_at: "DESC").take(1).reverse }
 
         after_create :run_async!
         after_create_commit -> { broadcast_append target: :operation_toasts, partial: "shared/operations/operation", locals: { operation: self } }
