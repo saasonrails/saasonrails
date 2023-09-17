@@ -6,27 +6,27 @@ module Saasonrails
       include Sidekiq::Job
 
       def perform(operation_id)
-        @_operation = Operation.find(operation_id)
-        @account = @_operation.account
+        @operation = Operation.find(operation_id)
+        @account = @operation.account
 
         before_run
         run
         after_run
       rescue => error
-        @_operation.update(status: "failed", error_message: error.message)
+        @operation.update(status: "failed", error_message: error.message)
         raise error
       end
 
       def before_run
-        @_operation.update!(status: "running")
+        @operation.update!(status: "running")
       end
 
       def after_run
-        @_operation.update!(status: "success")
+        @operation.update!(status: "success")
       end
 
       def args
-        HashWithIndifferentAccess.new(@_operation.payload)
+        HashWithIndifferentAccess.new(@operation.payload)
       end
 
       class << self

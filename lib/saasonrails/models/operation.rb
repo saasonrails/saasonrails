@@ -12,9 +12,9 @@ module Saasonrails
 
         validates :worker_name, presence: true
 
-        scope :for_toasts, -> { where("status != ?", "success").order(status: "DESC", created_at: "DESC").take(1).reverse }
+        scope :for_toasts, -> { where("status != ?", "success").order(created_at: "DESC").reverse }
 
-        after_create :run_async!
+        after_create_commit :run_async!
         after_create_commit -> { broadcast_append target: :operation_toasts, partial: "shared/operations/operation", locals: { operation: self } }
         after_update_commit -> { broadcast_replace_to :operation_toasts, partial: "shared/operations/operation", locals: { operation: self } }
         after_destroy_commit -> { broadcast_remove_to :operation_toasts }
@@ -33,7 +33,7 @@ module Saasonrails
       end
 
       def run_async!
-        worker_class.perform_in(2.seconds, id)
+        worker_class.perform_async(self.id)
       end
 
       def icon_class
