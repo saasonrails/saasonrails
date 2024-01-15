@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "importmap-rails", "~> 1.1.6"
   spec.add_dependency "friendly_id", "~> 5.5.0"
   spec.add_dependency "loaf", "~> 0.10.0"
-  spec.add_dependency "meta-tags", "~> 2.18.0"
+  spec.add_dependency "meta-tags", "~> 2.20.0"
   spec.add_dependency "acts_as_list", "~> 1.1.0"
   spec.add_dependency "ancestry", "~> 4.3.3"
   spec.add_dependency "omniauth", "~> 2.1.1"
